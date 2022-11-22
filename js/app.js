@@ -16,6 +16,11 @@ console.log(particlesLineColor)
 
 function configParticle(dark = true) {
 
+  // Grab the prefers reduced media query.
+  let animationSpeed = window.matchMedia("(prefers-reduced-motion: reduce)").matches ? 0 : 2
+  //console.log('animationSpeed: ',animationSpeed)
+
+
   const config = `
   {
     "particles": {
@@ -72,8 +77,8 @@ function configParticle(dark = true) {
         "width": 1
       },
       "move": {
-        "enable": true,
-        "speed": 6,
+        "enable": ${true},
+        "speed": ${animationSpeed},
         "direction": "none",
         "random": false,
         "straight": false,
