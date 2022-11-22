@@ -14,13 +14,31 @@ html {
 
   --bg-color: #EDF2FF;
   --text-color: #00082F;
-  --primary-color: hsla(228, 81%, 59%, 0.4);
-  --primary-color-dark: #364FC7;
+
+  --hue: ;
+  --primary-color: hsla(228, 81%, 59%, 0.6);
+  --primary-color-dark: hsl(228, 57%, 50%);
+
+}
+
+body.light-blue {
+  --bg-color: #dfe1e6;
+  --text-color: #00082e;
+  
+  --hue: 245 ;
+  --primary-color: hsla(var(--hue), 81%, 59%, 0.6);
+  --primary-color-dark: hsl(var(--hue), 81%, 59%);
 }
 
 body.dark-blue {
   --bg-color: hsl(266, 100%, 9%);
-  --text-color: #EDF2FF;
+  --text-color: hsl(223, 100%, 96%);
+
+  --primary-color: hsla(228, 81%, 59%, 0.6);
+  --primary-color-dark: hsl(230, 57%, 50%);
+
+  --particles-lines: #c73642;
+
 }
 
 body.pink {

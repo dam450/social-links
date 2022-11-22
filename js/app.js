@@ -11,10 +11,17 @@ particlesJS.load('particles-js', 'particles.json', function() {
 
 /* Otherwise just put the config content (json): */
 
-const particlesLine = getComputedStyle(document.documentElement).getPropertyValue('--particles-line'); 
-console.log(typeof particlesLine)
+const particlesLineColor = getComputedStyle(document.body).getPropertyValue('--particles-line'); 
+console.log(particlesLineColor)
 
-particlesJS('particles-js',
+function configParticle(dark = true) {
+
+  // Grab the prefers reduced media query.
+  let animationSpeed = window.matchMedia("(prefers-reduced-motion: reduce)").matches ? 0 : 2
+  //console.log('animationSpeed: ',animationSpeed)
+
+
+  const config = `
   {
     "particles": {
       "number": {
@@ -25,7 +32,7 @@ particlesJS('particles-js',
         }
       },
       "color": {
-        "value": "#222"
+        "value": "${dark ? '#22f' : '#f22'}"
       },
       "shape": {
         "type": "circle",
@@ -65,13 +72,13 @@ particlesJS('particles-js',
       "line_linked": {
         "enable": true,
         "distance": 150,
-        "color": "#558",
+        "color": "${dark ? '#222' : '#ddd'}",
         "opacity": 0.4,
         "width": 1
       },
       "move": {
-        "enable": true,
-        "speed": 6,
+        "enable": ${true},
+        "speed": ${animationSpeed},
         "direction": "none",
         "random": false,
         "straight": false,
@@ -125,4 +132,40 @@ particlesJS('particles-js',
     },
     "retina_detect": true
   }
-);
+  `
+  return  obj = JSON.parse(config)
+
+  
+} 
+
+
+particlesJS('particles-js', configParticle() );
+
+const DARK_THEME = 'dark-blue';
+const LIGHT_THEME = 'light-blue';
+
+function toggleThemeMode() {
+  if (document.body.classList.contains(LIGHT_THEME)) {
+    document.body.classList.replace(LIGHT_THEME, DARK_THEME)
+    localStorage.setItem("theme", DARK_THEME);
+    particlesJS('particles-js', configParticle(false) );
+  } else {
+    document.body.classList.replace(DARK_THEME, LIGHT_THEME)
+    localStorage.setItem("theme", LIGHT_THEME);
+    particlesJS('particles-js', configParticle(true) );
+  }
+}
+
+(function loadThemeModeOption() {
+  const savedTheme = localStorage.getItem("theme")
+  const activeTheme = document.body.classList.value
+  
+  if (activeTheme === savedTheme) return
+  
+  toggleThemeMode()
+})();
+
+
+document.querySelector('p.username')
+  .addEventListener("click", toggleThemeMode)
+
