@@ -1,54 +1,47 @@
-<h1 align="center"> Social links</h1>
+# Astro Starter Kit: Minimal
 
-<p align="center">
-  <a href="#-deploy">Deploy</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="#-tecnologias">Tecnologias</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="#-projeto">Projeto</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="#-layout">Layout</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-</p>
+```sh
+npm create astro@latest -- --template minimal
+```
 
-<p align="center">
-  <a href="#memo-licença">
-    <img alt="License" src="https://img.shields.io/static/v1?label=license&message=MIT&color=49AA26&labelColor=000000">
-  </a>
-</p>
+[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/minimal)
+[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/minimal)
+[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/minimal/devcontainer.json)
 
+> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
 
+## 🚀 Project Structure
 
-## 🚀 Deploy
+Inside of your Astro project, you'll see the following folders and files:
 
-O projeto está hospedado no Github Pages e pode ser acessado através do link [dam450.github.io/social-links](https://dam450.github.io/social-links/).
+```text
+/
+├── public/
+├── src/
+│   └── pages/
+│       └── index.astro
+└── package.json
+```
 
-## 🦾 Tecnologias
+Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
 
-Esse projeto foi desenvolvido com as seguintes tecnologias:
+There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
 
-- HTML e CSS
-- JavaScript e JSON
-- [Phosphor Icon](https://phosphoricons.com/) 
-- [Particles.js](https://github.com/VincentGarreau/particles.js/)
-- LocalStorage
-- **prefers-reduced-motion** (_acessibilidade:_ sem animações caso o usuário tenha optado)
+Any static assets, like images, can be placed in the `public/` directory.
 
-<p align="left">
-  <a href="#">
-    <img src="https://skillicons.dev/icons?i=html,css,js,vscode&theme=dark" />
-  </a>
-</p>
+## 🧞 Commands
 
+All commands are run from the root of the project, from a terminal:
 
-## 💻 Projeto
+| Command                   | Action                                           |
+| :------------------------ | :----------------------------------------------- |
+| `npm install`             | Installs dependencies                            |
+| `npm run dev`             | Starts local dev server at `localhost:4321`      |
+| `npm run build`           | Build your production site to `./dist/`          |
+| `npm run preview`         | Preview your build locally, before deploying     |
+| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
+| `npm run astro -- --help` | Get help using the Astro CLI                     |
 
-Projeto ao estilo linktree para apresentar os links de redes sociais, proposto na 2ª edição da Maratona Explorer da Rocketseat.
+## 👀 Want to learn more?
 
-## 🔖 Layout
-
-Você pode visualizar o layout Figma criado para esse projeto através [DESSE LINK](https://www.figma.com/file/DZfLmza1FLH7QlmmOEwIUP/Rocket-Links---Maratona-Explorer-2.0-(Community)-(Copy)?node-id=0%3A1&t=hf4ICtKCW54Ebk7A-0&viewer=1).
-
-## :memo: Licença
-
-Esse projeto está sob a licença [MIT](./Licence.md).
-
----
-
-Feito com ♥ by [Dam450](https://github.com/dam450/)
+Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
