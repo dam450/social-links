@@ -1,0 +1,10 @@
+---
+const { url, title, icon } = Astro.props;
+---
+
+<li>
+  <a href={url} target="_blank" rel="noopener noreferrer">
+    <i class={icon}></i>
+    {title}
+  </a>
+</li>
