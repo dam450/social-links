@@ -1,0 +1,42 @@
+---
+interface Props {
+  username: string;
+  icon?: string;
+}
+const { username, icon = "ph-heart" } = Astro.props;
+---
+
+<footer>
+  Feito com <i class={icon}></i> por <a
+    href="https://github.com/dam450/"
+    target="_blank"
+    rel="noopener noreferrer">{username}</a
+  >
+</footer>
+
+<style>
+  footer {
+    font-weight: 500;
+    font-size: 1.2rem;
+    opacity: 0.3;
+
+    transition: opacity 400ms;
+  }
+
+  footer i {
+    padding: 4px 3px 2px;
+    transform: translateY(0.2rem);
+  }
+
+  footer:hover {
+    opacity: 1;
+  }
+
+  footer:hover a {
+    text-decoration: underline;
+  }
+
+  footer a {
+    color: var(--text-color);
+  }
+</style>
