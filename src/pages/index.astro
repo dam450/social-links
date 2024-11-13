@@ -1,71 +1,41 @@
 ---
+import "../styles/global.css";
+import BaseLayout from "../layouts/BaseLayout.astro";
 import SocialButton from "../components/Social-button.astro";
 import Avatar from "../components/Avatar.astro";
+import Footer from "../components/Footer.astro";
+
+const username = "dam450";
 ---
 
-<!doctype html>
-<html lang="pt-BR">
-  <head>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<BaseLayout>
+  <Avatar username={username} />
 
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-    <link rel="shortcut icon" href="favicon.svg" type="image/svg+xml" />
-    <title>Social Links</title>
-
-    <link
-      href="https://fonts.googleapis.com/css2?family=Roboto+Mono&family=Roboto:wght@500;700&display=swap"
-      rel="stylesheet"
+  <ul>
+    <SocialButton
+      url="https://www.linkedin.com/in/evandro-damaso/"
+      title="Linkedin"
+      icon="linkedin"
     />
-    <link rel="stylesheet" href="style.css" />
-    <script src="https://unpkg.com/phosphor-icons" defer></script>
-    <!-- scripts -->
-    <script src="js/particles.js" defer></script>
-    <script src="js/app.js" defer></script>
-  </head>
 
-  <body class="light-blue">
-    <!-- particles.js container -->
-    <div id="particles-js"></div>
+    <SocialButton
+      url="https://www.github.com/dam450"
+      title="GitHub"
+      icon="github"
+    />
 
-    <main class="container">
-      <Avatar username="dam450" />
+    <SocialButton
+      url="https://www.instagram.com/dam450.dev"
+      title="Instagram"
+      icon="instagram"
+    />
 
-      <ul>
-        <SocialButton
-          url="https://www.linkedin.com/in/dam450/"
-          title="Linkedin"
-          icon="ph-linkedin-logo"
-        />
+    <SocialButton
+      url="https://discord.com/users/547738105331843077"
+      title="Discord"
+      icon="discord"
+    />
+  </ul>
 
-        <li>
-          <a href="https://github.com/dam450/" target="_blank">
-            <i class="ph-github-logo"></i> GitHub
-          </a>
-        </li>
-        <li>
-          <a href="https://www.instagram.com/dam450.dev/" target="_blank">
-            <i class="ph-instagram-logo"></i> Instagram
-          </a>
-        </li>
-        <li>
-          <a
-            href="https://discord.com/users/547738105331843077"
-            target="_blank"
-          >
-            <i class="ph-discord-logo"></i> Discord
-          </a>
-        </li>
-      </ul>
-
-      <footer>
-        Feito com <i class="ph-heart"></i> por <a
-          href="https://github.com/dam450/"
-          target="_blank">Dam450</a
-        >
-      </footer>
-    </main>
-  </body>
-</html>
+  <Footer username={username} />
+</BaseLayout>
