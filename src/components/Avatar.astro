@@ -3,9 +3,10 @@ import { Image } from "astro:assets";
 
 interface Props {
   username: string;
+  title: string;
 }
 
-const { username } = Astro.props;
+const { username, title } = Astro.props;
 
 const image = `https://github.com/${username}.png`;
 ---
@@ -18,7 +19,7 @@ const image = `https://github.com/${username}.png`;
   src={image}
   alt={`Imagem de perfil de ${username}`}
 />
-<h1>Evandro Damaso</h1>
+<h1>{title}</h1>
 <p class="username">{`@${username}`}</p>
 
 <style>
