@@ -1,14 +1,21 @@
 ---
+import { Image } from "astro:assets";
+
 interface Props {
   username: string;
 }
 
 const { username } = Astro.props;
+
+const image = `https://github.com/${username}.png`;
 ---
 
-<img
+<Image
+  draggable="false"
+  width={200}
+  height={200}
   class="avatar"
-  src={`https://github.com/${username}.png`}
+  src={image}
   alt={`Imagem de perfil de ${username}`}
 />
 <h1>Evandro Damaso</h1>
