@@ -1,0 +1,21 @@
+---
+import type { HTMLAttributes } from "astro/types";
+
+interface Props extends HTMLAttributes<"ul"> {}
+const props = Astro.props;
+---
+
+<ul {...props} class="social-list">
+  <slot />
+</ul>
+
+<style>
+  .social-list {
+    list-style: none;
+    margin: 4rem 0.3rem 2rem;
+
+    a {
+      text-decoration: none;
+    }
+  }
+</style>
