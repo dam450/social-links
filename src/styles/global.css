@@ -19,11 +19,6 @@ html {
   --primary-color-dark: hsl(228, 57%, 50%);
 }
 
-ul {
-  list-style: none;
-  margin: 4rem 0.3rem 2rem;
-}
-
 /* ---- particles.js container ---- */
 #particles-js {
   position: absolute;
