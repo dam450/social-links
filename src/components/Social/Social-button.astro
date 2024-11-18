@@ -1,0 +1,68 @@
+---
+import LinkedInLogo from "phosphor-astro/LinkedinLogo.astro";
+import YoutubeLogo from "phosphor-astro/YoutubeLogo.astro";
+import TwitterLogo from "phosphor-astro/TwitterLogo.astro";
+import TwitchLogo from "phosphor-astro/TwitchLogo.astro";
+import GitHubLogo from "phosphor-astro/GithubLogo.astro";
+import DiscordLogo from "phosphor-astro/DiscordLogo.astro";
+import InstagramLogo from "phosphor-astro/InstagramLogo.astro";
+
+const icons = {
+  LinkedIn: LinkedInLogo,
+  Youtube: YoutubeLogo,
+  Twitter: TwitterLogo,
+  Twitch: TwitchLogo,
+  Github: GitHubLogo,
+  Discord: DiscordLogo,
+  Instagram: InstagramLogo,
+};
+
+interface Props {
+  url: string;
+  title: string;
+  icon?: keyof typeof icons;
+}
+
+const { url, title, icon } = Astro.props;
+const Icon = icon ? icons[icon] : null;
+---
+
+<li class="social-button">
+  <a href={url} target="_blank" rel="noopener noreferrer">
+    {Icon && <Icon class="icon" />}
+    {title}
+  </a>
+</li>
+
+<style is:global>
+  .social-list .social-button + li {
+    margin-top: 1.6rem;
+  }
+
+  .social-list .social-button a {
+    height: 5.3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--primary-color);
+    color: white;
+    text-transform: uppercase;
+    font-size: 1.4rem;
+
+    border-radius: 0.6rem;
+
+    transition: all 400ms ease-out;
+  }
+
+  .social-list .social-button a:hover {
+    background: var(--primary-color-dark);
+    transform: scale(1.05);
+  }
+
+  .social-list .social-button a svg.icon {
+    height: 3rem;
+    width: 3rem;
+    padding-right: 5px;
+    font-size: 2.5rem;
+  }
+</style>
