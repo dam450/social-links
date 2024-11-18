@@ -1,8 +1,8 @@
 ---
 import BaseLayout from "@layouts/BaseLayout.astro";
-import SocialButton from "@components/Social-button.astro";
 import Avatar from "@components/Avatar.astro";
 import Footer from "@components/Footer.astro";
+import { Social } from "@components/Social/";
 
 const username = "dam450";
 ---
@@ -10,31 +10,31 @@ const username = "dam450";
 <BaseLayout>
   <Avatar username={username} />
 
-  <ul>
-    <SocialButton
+  <Social.List>
+    <Social.Item
       url="https://www.linkedin.com/in/evandro-damaso/"
       title="Linkedin"
-      icon="linkedin"
+      icon="LinkedIn"
     />
 
-    <SocialButton
+    <Social.Item
       url="https://www.github.com/dam450"
       title="GitHub"
-      icon="github"
+      icon="Github"
     />
 
-    <SocialButton
+    <Social.Item
       url="https://www.instagram.com/dam450.dev"
       title="Instagram"
-      icon="instagram"
+      icon="Instagram"
     />
 
-    <SocialButton
+    <Social.Item
       url="https://discord.com/users/547738105331843077"
       title="Discord"
-      icon="discord"
+      icon="Discord"
     />
-  </ul>
+  </Social.List>
 
   <Footer username={username} />
 </BaseLayout>
